@@ -5,8 +5,8 @@ name: Firmware
 # If no release with that name exists here, builds the ROMs and publishes a release.
 
 on:
-  schedule:
-    - cron: '23 4 * * 1'          # Monday 04:23 UTC
+#  schedule:
+#    - cron: '23 4 * * 1'          # Monday 04:23 UTC
   workflow_dispatch:
     inputs:
       variant:
@@ -71,7 +71,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           # scheduled runs build every variant of the repository variable APU_VARIANTS
           VARIANTS: ${{ inputs.variant && format('["{0}"]', inputs.variant) || vars.APU_VARIANTS || '["seabios","uefi"]' }}
-          BOARDS: ${{ vars.APU_BOARDS || '["apu4"]' }}
+          BOARDS: ${{ vars.APU_BOARDS || '["apu2"]' }}
           UNRELEASED: ${{ inputs.unreleased && '1' || '0' }}
           # release candidates: manual input, or repository variable APU_RC (default 1) for scheduled runs
           RC: ${{ github.event_name == 'workflow_dispatch' && (inputs.rc && '1' || '0') || vars.APU_RC || '1' }}

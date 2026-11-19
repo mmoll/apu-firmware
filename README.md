@@ -70,7 +70,7 @@ Manual runs of the *Firmware* workflow accept `patch_tool`, `pq_ref` (a patch qu
 `mirrors` and `publish` (off = test build kept as a workflow artifact, no release) to investigate
 such differences. Locally: `PQ_REF=0235cbc scripts/apu-fw build 26.09.00.01`.
 
-## Installing the plugin on OPNsense
+## Installing the plugin on OPNsense (ripped out in this fork)
 
 Once, over SSH on the router, as root:
 
